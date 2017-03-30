@@ -59,7 +59,22 @@ Route::get('ruangan/lihat/{ruangan}','RuanganController@lihat');
 Route::post('ruangan/simpan','RuanganController@simpan');
 Route::get('ruangan/edit/{Ruangan}','RuanganController@edit');
 Route::post('ruangan/edit/{Ruangan}','RuanganController@update');
-Route::get('ruangan/hapus/{Ruangan}','RuanganController@hapus');
+Route::get('ruangan/hapus/{Ruangan}','RuanganController@hapus')
+;
+Route::get('relasi/mahasiswa',function(){
+	$mahasiswa = App\Pengguna::find(1)->mahasiswa;
+	return "<li>$mahasiswa";
+});
+
+Route::get('relasi/pengguna',function(){
+	$pengguna = App\Mahasiswa::find(1)->pengguna;
+	return "<li>$pengguna";
+});
+
+Route::get('relasi/dosen',function(){
+	$pengguna = App\Pengguna::find(1)->dosen;
+	return "<li>$pengguna";
+});
 
 // Route::get('/pengguna/add', function(){
 // 	$pengguna = new App\pengguna();
