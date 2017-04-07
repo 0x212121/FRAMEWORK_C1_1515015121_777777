@@ -21,7 +21,7 @@ class Dosen extends Model
         return $this->pengguna->username;
     }
 
-    public function listDosenDanNim(){
+    public function listDosenDanNip(){
         $out = [];
         foreach ($this->all() as $dosen) {
             $out[$dosen->id] = "{$dosen->nama} ({$dosen->nip})";

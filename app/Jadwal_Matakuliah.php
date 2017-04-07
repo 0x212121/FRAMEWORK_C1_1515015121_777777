@@ -20,7 +20,7 @@ class jadwal_matakuliah extends Model
 
     public function Dosen_Matakuliah()
     {
-        return $this->belongsTo(Dosen_Matakuliah::class);
+        return $this->belongsTo(Dosen_Matakuliah::class, 'dosen_matakuliah_id');
     }
 
     public function getNamadosenAttribute(){
